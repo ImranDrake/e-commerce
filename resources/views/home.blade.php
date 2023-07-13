@@ -37,9 +37,11 @@
         <button style="background-color: #008CBA; cursor: pointer; height:35px; width:130px;" @click="open = !open"> Register </button>
         </div>
         @endguest
+
         @auth
           @livewire('logout')
         @endauth
+        
       </div>
 
        <div>
