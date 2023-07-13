@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<title>Fasion Store</title>
+@livewireStyles
+<!-- Fonts -->
+
+<!-- Styles -->
+<style>
+
+</style>
+</head>
+
+<body>
+    <livewire:scripts />
+    <div class="body">
+        <div x-data='{
+                open: false,
+                shown: false
+                        }'>
+            <div class="nav-align" style="margin-bottom: 5px;">
+                <img src="logo.svg" alt="" class="icon">
+                <h2 style="margin:0px"> FAITHFUL <strong>BRAND</strong> </h2>
+                <div class=justify-content-end>
+                    <button style="background-color: #008CBA; cursor: pointer; height:35px; width:130px;"
+                        @click="shown = !shown"> Login </button>
+                    <button style="background-color: #008CBA; cursor: pointer; height:35px; width:130px;"
+                        @click="open = !open"> Register </button>
+                </div>
+            </div>
+
+            {{-- REGISTRATION --}}
+            <div x-show="open" class="fixed flex justify-center times-center left-0 right-0 bottom-0 top-0 bg-black/75"
+                x-transition @click.outside="open = false" x-cloak>
+                <div class="w-1/2 bg-white-500">
+                    <form action="">
+                        <div class="container " @click.outside="open = false">
+                            <h1 class="px-4 py-2 text-lg font-semibold gb-grey-100">Register</h1>
+
+                            <hr>
+                            <div class="p-4">
+                                <label for="email"><b>Email</b></label><br>
+                                <input type="text" class="inputreg" placeholder="Enter Email" name="email" id="email"
+                                    required>
+
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" class="inputreg" placeholder="Enter Password" name="psw" id="psw"
+                                    required>
+
+                                <label for="pswrep"><b>Confirm Password</b></label>
+                                <input type="password" class="inputreg" placeholder="Repeat Password" name="pswrep"
+                                    id="pswrep" required>
+                                <hr>
+
+                                <div style="justify-content: space-between; display: flex">
+                                    <button type="submit"
+                                        style="background-color: #008CBA; cursor: pointer; height:35px; width:130px;">Register</button>
+                                    <button type="" class="registerbtn bg-grey-300 rounded"
+                                        style="background-color:slategrey" @click="open = false">Cancel</button>
+                                </div>
+                            </div>
+
+                    </form>
+                </div>
+            </div>
+
+            {{-- Login --}}
+            <div x-show="shown"
+                class="fixed flex justify-center times-center left-0 right-0 bottom-0 top-0  bg-black/50" x-transition
+                x-cloak>
+                <div class="w-1/2 bg-white-500">
+                    <form action="">
+                        <div class="container " @click.outside="shown = false">
+                            <h1 class="px-4 py-2 text-lg font-semibold gb-grey-100">Login</h1>
+
+                            <hr>
+                            <div class="p-4">
+                                <label for="email"><b>Email</b></label><br>
+                                <input type="text" class="inputreg" placeholder="Enter Email" name="email" id="emaild"
+                                    required>
+
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" class="inputreg" placeholder="Enter Password" name="pswd"
+                                    id="pswd" required>
+                                <hr>
+
+                                <div style="justify-content: space-between; display: flex">
+                                    <button type="submit"
+                                        style="background-color: #008CBA; cursor: pointer; height:35px; width:130px;">Login</button>
+                                    <button type="" class="registerbtn bg-grey-300 rounded"
+                                        style="background-color:slategrey" @click="shown = false">Cancel</button>
+                                </div>
+                            </div>
+
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+    <!-- <img src="{{ asset('images/product.png') }}" alt="tag"> -->
+    <ul class="border-solid border-2">
+        <li><a class="active border-solid border-2" href="#mens">MEN'S</a></li>
+        <li><a class="active border-solid border-2" href="#kids">KID'S</a></li>
+        <li><a class="active border-solid border-2" href="#sportsware">SPORTSWEAR</a></li>
+        <li><a class="active border-solid border-2" href="#dresses">DRESSES</a></li>
+        <li><a class="active border-solid border-2" href="#home">HOME</a></li>
+        <li><a class="active border-solid border-2" href="#sportsware">ACCESSORIES</a></li>
+        <li><a class="active border-solid border-2" href="#sleepwear">SLEEPWEAR</a></li>
+        <li><a class="active border-solid border-2" href="#womens">WOMEN'S</a></li>
+        <li>
+            <div class="search-container">
+                <form action="">
+                    <input type="text" placeholder="SEARCH" name="search" style="height: 42px; margin-top: 7px;">
+                    <button type="submit"><img width="15" height="10" src="search.svg" alt="img-missing"
+                            class="icon"></button>
+                </form>
+            </div>
+        </li>
+        <div class="search-container">
+            <form action="">
+                <li><a href="#magcn" style="    width: 100 px;">CART</a></li>
+                <button type="submit"><img width="15" height="10" src="cart.svg" alt="img-missing"
+                        class="icon"></button>
+            </form>
+        </div>
+        <!-- <li><a href="#magcn">magicon</a></li> -->
+    </ul>
+    <br> <br>
+    <div style="display:flex">
+        <!-- Product 1-->
+        @livewire('comments')
+
+    </div>
+    <!-- <div class="content">
+        <img src="product.png" alt="img-missing" class="images">
+        <img src="product.png" alt="img-missing" class="images">
+        <img src="product.png" alt="img-missing" class="images">
+        </div> -->
+    @livewireScripts --}}
+    <p id="year">@year@</p>
+</body>
+<script>
+    let year = document.getElementById('year');
+    year.innerHTML = new Date();
+</script>
+
+</html>
