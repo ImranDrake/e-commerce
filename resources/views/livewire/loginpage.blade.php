@@ -10,7 +10,7 @@
                             <h1 class="px-4 py-2 text-lg font-semibold gb-grey-100">Login</h1>
                               <div class="text-red-500 bg-grey-300">
                                     @if (session()->has('message'))
-                                        <div class="alert alert-success">
+                                        <div class="alert alert-success" x-transition>
                                             {{ session('message') }}
                                         </div>
                                     @endif

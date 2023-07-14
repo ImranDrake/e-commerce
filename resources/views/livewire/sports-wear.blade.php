@@ -1,28 +1,6 @@
-       {{-- <div style="justify-content: center;">
-                <div>
-                <p> If you look to others for fulfillment, you will never truly be fulfilled. </p>
-                </div>
-                <form wire:submit.prevent='addComment'>
-                    <input type="text" wire:model.lazy="initialcomment"> <button type="submit">Add</button>
-                </form> 
-
-                @foreach($comments as $comment)
-                <div style="width: 15%; height: 100px;">
-                    <div style="justify-content: space-between; display: flex"><span>{{$comment['Author']}}</span> <span >{{$comment['created_at']}}</span></div><br>
-                    <div>{{$comment['body']}}</div>
-                </div>
-                @endforeach
-        </div> --}}
-<div x-show="tab == 1" x-clock>
- {{-- @foreach($price1 as $amnt)
-    <div>
-     {{$amnt->price_models}} 
-    </div>    
-@endforeach     --}}
-    {{-- <div>
-     {{$price1}} 
-    </div>  --}}
-    <div class="" x-data="{ 
+<div x-show="tab == 3" x-clock>
+    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
+     <div class="" x-data="{ 
                 activeTab: '39',
                 sizePrice: {{$price1}},
                 sizes: {'39': '0', '40' : '1', '41': '2', '42': '3'}, 
@@ -35,7 +13,7 @@
             <div>
                 <span>
                 {{--  --}}
-                <img src="product.png" alt="img-missing" class="images">
+                <img src="sportswear.svg" alt="img-missing" class="images">
                 <div class="card1">
                    {{-- <template x-for="(size, index) in sizes"> --}}
                     <span style="margin-top: 10px; margin-left: 15px;" x-text="sizePrice[sizes[current_size]].price_models"></span>
@@ -81,4 +59,3 @@
             </div>
         </div>
 </div>
-
