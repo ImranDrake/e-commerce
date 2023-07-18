@@ -9,15 +9,19 @@ use Livewire\Component;
 
 class Categorys extends Component
 {
-    public $search = '';
-    public $items;
+    public $search = 'Testing';
+    public $items =[];
     public function render()
     {
-        return view('livewire.categorys', [
-            'products' => ProductModel::when($this->search, function($query, $search){
-                return $query->where('product', 'like', '%'.$this->search.'%');
-            })
-        ]);
+        $this->items = ProductModel::get();
+        $this->emit('updateSearch', $this->search);
+
+        return view('livewire.categorys');
+        // [
+        //     'products' => ProductModel::when($this->search, function($query, $search){
+        //         return $query->where('product', 'like', '%'.$this->search.'%');
+        //     })
+        // ]);
     }
     public $categorys;
     public function mount () {

@@ -12,9 +12,6 @@
 
     <title>Fasion Store</title>
     @livewireStyles
-    <!-- Fonts -->
-
-    <!-- Styles -->
     <style>
      
     </style>
@@ -61,7 +58,7 @@
 <section >
     <!-- <img src="{{ asset('images/product.png') }}" alt="tag"> -->
     <hr>
-      @livewire('categorys')
+      {{-- @livewire('categorys') --}}
     <hr>
     <div style="display:flex">
       <!-- PRODUCT Mens (comments) -> (mens) --> 
@@ -81,13 +78,14 @@
 
 </section>
 
-   {{-- @livewireScripts --}}
+   @livewireScripts
    <br><br><br>
    <hr>
-  <p id="year">@year@</p>
+  <p style="text-align: end;" id="year">@year@</p>
   </body>
   <script>
    let year = document.getElementById('year');
    year.innerHTML = new Date();
+   </script>
 
   </html>

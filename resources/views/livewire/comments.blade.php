@@ -1,7 +1,37 @@
-     
+<div> 
+      <section x-data='{
+            cat: 0
+              }' >
+    <!-- <img src="{{ asset('images/product.png') }}" alt="tag"> -->
+    <ul class="border-solid ">
+    @foreach($categorys as $category) 
+      <li><a @click= "cat = {{$category->id}} ;" :style=" cat == {{$category->id}} ? 'color: white; background-color: black;' : 'border-color: grey;'" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">{{$category->product_category}}</a></li>
+    @endforeach
+    <li>
+        <div class="search-container">
+          <form wire.submit.prevent="">
+            <input type="text" placeholder="SEARCH" name="search" style="height: 42px; margin-top: 7px;" wire:model="search"> 
+            <button type="submit"><img width="15" height="10" src="search.svg" alt="img-missing" class="icon"></button>
+          </form>
+        </div>
+        {{$search}}
+       
+      </li>
+      <li>
+      <div class="search-container">
+        <form action="">
+          <li><a href="#magcn" style="width: 100 px;">CART <sup>({{$cartItem}})</sup></a></li>
+          <button type="submit"><img width="15" height="10" src="cart.svg" alt="img-missing" class="icon"></button>
+        </form>
+      </div>
+      </li>
+      <!-- <li><a href="#magcn">magicon</a></li> -->
+    </ul>
+    <br> <br>
 
+    
 
-<div x-show="tab == 0" x-clock class="grid grid-cols-3">
+<div  x-clock class="grid grid-cols-3">
 
  @foreach($products as $item)
 
@@ -34,7 +64,7 @@
                     <div style="text-align: right; display: flex; gap: 14px; margin-right: 10px;">
                     <img class="bagimg" src="bag.svg" alt='img-missing'>
                     
-                    <p style="cursor: pointer;margin-top: 10px;">Add Cart</p>
+                    <p style="cursor: pointer;margin-top: 10px;" wire:click.prevent='addToCart({{$item->id}})'>Add Cart</p>
                     </div>
                 </div>
                 </span>
@@ -79,5 +109,7 @@
             </div>
         </div>
     @endforeach
+    
+</div>
 </div>
 
