@@ -10,7 +10,7 @@ class UserModel extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'emailid',
+        'email',
         'password'
     ];
 

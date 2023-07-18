@@ -106,9 +106,9 @@
     border-style: groove;
   }
 
-  li a:hover {
+   li a:hover {
     background-color: #111;
-    color: white;
+    color: white; 
   }
 
   .images {

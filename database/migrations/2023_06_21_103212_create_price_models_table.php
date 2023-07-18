@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('price_models', function (Blueprint $table) {
             $table->id();
-            $table->string('imagepath');
+            // $table->string('imagepath');
             $table->integer('price_models')->constrained()->onDelete('cascade');
            // $table->integer('color_id');
-           // $table->integer('product_id');
+            $table->foreignId('product_models_id')->constrained()->onDelete('cascade');
            // $table->integer('size_id');
             $table->foreignId('color_models_id')->constrained()->onDelete('cascade');
            // $table->foreignId('product_models_id')->constrained()->onDelete('cascade');

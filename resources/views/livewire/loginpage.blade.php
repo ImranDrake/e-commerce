@@ -19,9 +19,9 @@
                             <hr>
                             <div class="p-4">
                                 <label for="email"><b>Email</b></label><br>
-                                <input type="email" class="inputreg" placeholder="Enter Email" name="email" id="emaild"
-                                    wire:model="loginform.emailid">
-                                    @error('loginform.emailid')
+                                <input type="email" class="inputreg" placeholder="Enter Email" name="email" id="email"
+                                    wire:model="loginform.email">
+                                    @error('loginform.email')
                                     <span class='text-red-500 text-xs'>{{$message}}</span>
                                     @enderror
 

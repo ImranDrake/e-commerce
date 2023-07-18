@@ -62,9 +62,10 @@ class FasionController extends Controller
     {
         //
     }
-    public function cash($size,$color){
+    public function price($product, $color, $size){
+
         $cash =PriceModel::
-        //where('categories_id','=',$product)->
+        where('product_models_id','=',$product)->
         where('color_models_id','=',$color)->
         where('size_models_id','=',$size)->get();
         return response()->json($cash);

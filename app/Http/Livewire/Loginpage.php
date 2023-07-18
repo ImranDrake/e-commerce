@@ -9,18 +9,19 @@ class Loginpage extends Component
 {
 
     public $loginform = [
-        'emailid' => 'asdas',
-        'password' => 'asdasdas'
+        'email' => '',
+        'password' => ''
     ];
 
     public function login() {
        //dd($this->loginform);
         $this->validate([
-            'loginform.emailid' => 'required|email',
+            'loginform.email' => 'required|email',
             'loginform.password' => 'required',
+            //dd($this->loginform)
         ]);
       
-        if (Auth::attempt(['email' => $this->loginform['emailid'], 'password' => $this->loginform['password']])) {
+        if (Auth::attempt(['email' => $this->loginform['email'], 'password' => $this->loginform['password']])) {
             return redirect()->to('/');
           }
           else {

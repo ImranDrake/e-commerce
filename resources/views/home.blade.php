@@ -29,7 +29,7 @@
               }'>
        {{-- Header Div--}}
       <div class="nav-align mt-50"  style="margin: 10px;" >
-        <img src="logo.svg" alt="" class="icon">
+        <a href='/'><img src="logo.svg" alt="" class="icon" ></a>
         <h2 class="w-50 py-2 ml-20"> FAITHFUL <strong>BRAND</strong> </h2>
         
         @guest
@@ -58,54 +58,25 @@
 
        
     {{-- TABS DIV --}}
-<section x-data='{
-            tab: 0
-              }' >
+<section >
     <!-- <img src="{{ asset('images/product.png') }}" alt="tag"> -->
-    <ul class="border-solid border-2">
-      <li><a @click="tab=1" class="active border-solid border-2 cursor-pointer bg-grey-400">MEN'S</a></li>
-      <li><a @click="tab=2" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">KID'S</a></li>
-      <li><a @click="tab=3" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">SPORTSWEAR</a></li>
-      <li><a @click="" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">DRESSES</a></li>
-      <li><a @click="tab=4" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">HOME</a></li>
-      <li><a @click="" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">ACCESSORIES</a></li>
-      <li><a @click="" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">SLEEPWEAR</a></li>
-      <li><a @click="tab=5" class="cursor-pointer border-solid border-2 bg-grey-200 hover:bg-grey-300">WOMEN'S</a></li>
-      <li>
-        <div class="search-container">
-          <form action="">
-            <input type="text" placeholder="SEARCH" name="search" style="height: 42px; margin-top: 7px;">
-            <button type="submit"><img width="15" height="10" src="search.svg" alt="img-missing" class="icon"></button>
-          </form>
-        </div>
-      </li>
-      <li>
-      <div class="search-container">
-        <form action="">
-          <li><a href="#magcn" style="    width: 100 px;">CART</a></li>
-          <button type="submit"><img width="15" height="10" src="cart.svg" alt="img-missing" class="icon"></button>
-        </form>
-      </div>
-      </li>
-      <!-- <li><a href="#magcn">magicon</a></li> -->
-    </ul>
-    <br> <br>
-
-
+    <hr>
+      @livewire('categorys')
+    <hr>
     <div style="display:flex">
       <!-- PRODUCT Mens (comments) -> (mens) --> 
                   @livewire('comments')
       <!-- PRODUCT Kids -->
-                  @livewire('kids')
+                  {{-- @livewire('kids') --}}
       <!-- PRODUCT SportsWear -->
-                  @livewire('sports-wear')
+                  {{-- @livewire('sports-wear') --}}
     </div>
     
     <div style="display:flex">
       <!-- PRODUCT HomeAssceories -->
-                  @livewire('home-accessories')
+                  {{-- @livewire('home-accessories') --}}
       <!-- PRODUCT Womens -->
-                  @livewire('womens')
+                  {{-- @livewire('womens') --}}
     </div>
 
 </section>

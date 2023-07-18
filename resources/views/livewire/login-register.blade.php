@@ -14,8 +14,8 @@
             <span class='text-red-500 text-xs'>{{$message}}</span>
             @enderror
             <label for="email"><b>Email</b></label><br>
-            <input type="text" class="inputreg" placeholder="Enter Email" name="emailid" id="emailid" wire:model="form.emailid"><br>
-            @error('form.emailid')
+            <input type="text" class="inputreg" placeholder="Enter Email" name="email" id="email" wire:model="form.email"><br>
+            @error('form.email')
             <span class='text-red-500 text-xs'>{{$message}}</span>
             @enderror
             <label for="psw"><b>Password</b></label>

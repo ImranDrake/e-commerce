@@ -47,4 +47,6 @@ Route::get('/getdetailscart', [DataController::class, 'getdetailsCart']);
 //     return view('livewire/login-register');
 // });
 
-Route::get('a/{size}/{color}',[FasionController::class,'cash']);
+//Route::get('a/{size}/{color}',[FasionController::class,'cash']);
+
+Route::get('a/{product}/{color}/{size}',[FasionController::class,'price']);

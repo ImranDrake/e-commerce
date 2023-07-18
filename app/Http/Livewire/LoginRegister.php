@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use App\Models\UserModel;
+//use App\Models\UserModel;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -11,7 +11,7 @@ class LoginRegister extends Component
 {
     public $form = [
         'name' => '',
-        'emailid' => '',
+        'email' => '',
         'password' => '',
         'confirmpassword' => ''
     ];
@@ -19,11 +19,12 @@ class LoginRegister extends Component
     public function submit() {
         $this->validate([
             'form.name' => 'required',
-            'form.emailid' => 'required',
+            'form.email' => 'required',
             'form.password' => 'required',
-            'form.confirmpassword' => 'required|same:form.password'
+            'form.confirmpassword' => 'required|same:form.password',
+            //dd($this->form)
         ]);
-        UserModel::create($this->form);
+        User::create($this->form);
         // dd($this->form);
         return redirect('/');
     }
